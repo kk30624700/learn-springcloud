@@ -2,8 +2,27 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-server:
-  port: 8762
+
+management:
+  security:
+    enabled: false
+    
 spring:
   application:
     name: eureka-producer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      trace:
+        enabled: true
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
+        serviceId: microservice-config                # 指定config server在服务发现中的serviceId，默认为：configserver
+        
