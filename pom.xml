@@ -31,6 +31,7 @@
 		<module>eureka-feign-consumer</module>
 		<module>microservice-zuul</module>
 		<module>microservice-config</module>
+		<module>microservice-turbine</module>
 	</modules>
 
 	<dependencyManagement>
